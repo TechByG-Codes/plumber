@@ -1,672 +1,2702 @@
-<!doctype html>
+<!-- index.html -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0B0B0D">
-  <meta name="description" content="SMILE STUDIO — cinematic cosmetic dentistry for unforgettable smiles.">
-  <title>SMILE STUDIO — The World's Most Photographed Smiles</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="FLOWSTATE PLUMBING — Fast, reliable plumbing service and 24/7 emergency repair."
+  />
+  <meta name="theme-color" content="#0E1A2B" />
+  <title>FLOWSTATE PLUMBING — Fast. Reliable. Flowing.</title>
 
-  <!-- Typography: editorial serif + modern sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
-      --black: #0B0B0D;
-      --black-2: #101014;
-      --gold: #D4AF6A;
-      --gold-soft: rgba(212,175,106,.16);
-      --ivory: #F7F3EC;
-      --burgundy: #5B1A24;
-      --muted: #a7a39d;
-      --line: rgba(247,243,236,.14);
-      --serif: "Bodoni Moda", Georgia, serif;
-      --sans: "DM Sans", Arial, sans-serif;
-      --ease: cubic-bezier(.2,.75,.2,1);
+      --navy: #0e1a2b;
+      --navy-2: #13243a;
+      --navy-3: #1a2d45;
+      --steel: #8b96a3;
+      --steel-light: #c1c8cf;
+      --copper: #c87941;
+      --copper-light: #db9865;
+      --off-white: #f4f1ec;
+      --white: #ffffff;
+      --black: #08111e;
+      --line: rgba(139, 150, 163, 0.24);
+      --shadow: 0 22px 70px rgba(8, 17, 30, 0.16);
+      --radius: 4px;
+      --max-width: 1240px;
+      --header-height: 76px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
     body {
       margin: 0;
-      background: var(--black);
-      color: var(--ivory);
-      font-family: var(--sans);
+      background: var(--off-white);
+      color: var(--navy);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
       overflow-x: hidden;
     }
-    body::selection { background: var(--gold); color: var(--black); }
 
-    a { color: inherit; text-decoration: none; }
-    img { display: block; width: 100%; }
-    button, input, textarea, select { font: inherit; }
-
-    .noise {
-      position: fixed; inset: 0; z-index: 100;
-      pointer-events: none; opacity: .045;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+    body,
+    button,
+    input,
+    select,
+    textarea {
+      font-family: "DM Sans", sans-serif;
     }
 
-    .container { width: min(1240px, calc(100% - 48px)); margin-inline: auto; }
-    .eyebrow {
-      color: var(--gold);
-      font-size: .72rem;
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--copper);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 110px 0;
+      overflow: hidden;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--copper);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: .28em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
     }
 
-    /* ---------------- NAV ---------------- */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 24px 30px;
-      transition: background .4s ease, border .4s ease, padding .4s ease;
+    .section-label::before {
+      width: 26px;
+      height: 1px;
+      background: currentColor;
+      content: "";
     }
-    .nav.scrolled {
-      background: rgba(11,11,13,.82);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-      padding-block: 16px;
-    }
-    .brand {
-      display: flex; align-items: center; gap: 12px;
-      font-size: .76rem; font-weight: 700; letter-spacing: .28em;
-    }
-    .brand-mark {
-      width: 28px; height: 28px; border: 1px solid var(--gold);
-      transform: rotate(45deg); position: relative;
-    }
-    .brand-mark::after {
-      content:""; position:absolute; inset:6px; border:1px solid var(--gold);
-    }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a {
-      font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
-      color: rgba(247,243,236,.78); transition: color .25s ease;
-    }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta {
-      border: 1px solid rgba(212,175,106,.7);
-      padding: 11px 16px; color: var(--gold) !important;
-    }
-    .menu { display:none; background:none; border:0; color:var(--ivory); font-size:1.5rem; }
 
-    /* ---------------- HERO ---------------- */
-    .hero {
-      min-height: 100svh; position: relative; overflow: hidden;
-      display: grid; align-items: end;
-      isolation: isolate;
-      background: var(--black);
+    .section-heading {
+      max-width: 760px;
+      margin: 0;
+      color: var(--navy);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      font-weight: 600;
+      letter-spacing: -0.055em;
+      line-height: 0.98;
     }
-    .hero-media {
-      position: absolute; inset: 0; z-index: -3;
-      background:
-        linear-gradient(90deg, rgba(11,11,13,.86) 0%, rgba(11,11,13,.48) 46%, rgba(11,11,13,.38) 100%),
-        linear-gradient(0deg, rgba(11,11,13,.8) 0%, transparent 48%),
-        url("https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=2200&q=88") center/cover;
-      transform: scale(1.03);
-      animation: heroZoom 9s var(--ease) both;
+
+    .section-heading.light {
+      color: var(--white);
     }
-    .hero::before {
-      content:""; position:absolute; inset:-20%;
-      z-index:-1; pointer-events:none; opacity:0;
-      background: conic-gradient(from 215deg at var(--mx, 50%) var(--my, 42%),
-        transparent 0deg, rgba(212,175,106,.34) 11deg, rgba(247,243,236,.08) 17deg,
-        transparent 30deg, transparent 360deg);
-      mix-blend-mode: screen;
-      animation: spotlightSweep 2.2s var(--ease) .15s forwards;
+
+    .section-intro {
+      max-width: 620px;
+      margin: 24px 0 0;
+      color: #53606e;
+      font-size: 1.05rem;
     }
-    .hero::after {
-      content:""; position:absolute; inset:0; z-index:-2; pointer-events:none;
-      background: radial-gradient(circle at var(--mx, 50%) var(--my, 42%), rgba(212,175,106,.11), transparent 30%);
-      opacity: .75;
-      transition: opacity .3s ease;
+
+    .section-intro.light {
+      color: var(--steel-light);
     }
-    .hero-content { padding: 150px 0 82px; max-width: 930px; }
-    .hero-kicker { opacity:0; transform:translateY(20px); animation: rise .8s var(--ease) .45s forwards; }
-    h1 {
-      margin: 18px 0 26px;
-      font-family: var(--serif);
-      font-size: clamp(4.2rem, 9.2vw, 9.4rem);
-      line-height: .82;
-      font-weight: 500;
-      letter-spacing: -.055em;
-      max-width: 1050px;
-      opacity:0; transform:translateY(36px);
-      animation: rise 1s var(--ease) .58s forwards;
+
+    .eyebrow {
+      color: var(--copper-light);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
     }
-    .hero-copy {
-      max-width: 570px; color: rgba(247,243,236,.75);
-      font-size: 1rem; line-height: 1.7;
-      opacity:0; transform:translateY(25px);
-      animation: rise .9s var(--ease) .76s forwards;
-    }
-    .hero-actions {
-      display:flex; gap:12px; flex-wrap:wrap; margin-top:32px;
-      opacity:0; transform:translateY(20px);
-      animation: rise .8s var(--ease) .92s forwards;
-    }
+
     .btn {
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      min-height: 50px; padding: 0 22px;
-      border: 1px solid var(--gold); text-transform:uppercase;
-      letter-spacing:.13em; font-size:.72rem; font-weight:700;
-      transition: transform .3s ease, background .3s ease, color .3s ease, box-shadow .3s ease;
-    }
-    .btn-gold { background:var(--gold); color:var(--black); box-shadow:0 0 28px rgba(212,175,106,.14); }
-    .btn-gold:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(212,175,106,.2); }
-    .btn-ghost { color:var(--ivory); border-color:rgba(247,243,236,.35); }
-    .btn-ghost:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-3px); }
-    .hero-meta {
-      display:flex; justify-content:space-between; align-items:end; gap:20px;
-      margin-top:70px; padding-top:18px; border-top:1px solid var(--line);
-      color:rgba(247,243,236,.55); font-size:.68rem; letter-spacing:.15em; text-transform:uppercase;
-    }
-    .scroll-cue { display:flex; align-items:center; gap:10px; }
-    .scroll-line { width:48px; height:1px; background:var(--gold); }
-
-    /* ---------------- INTRO ---------------- */
-    .intro { padding: 150px 0 170px; background:var(--black); }
-    .intro-grid { display:grid; grid-template-columns: 1fr 2.2fr; gap:60px; }
-    .intro-rule { width:70px; height:2px; background:var(--gold); margin-top:10px; }
-    .pullquote {
-      margin:0; font-family:var(--serif);
-      font-size:clamp(2.6rem, 5.3vw, 5.6rem);
-      line-height: .98; letter-spacing:-.045em;
-    }
-    .pullquote em { color:var(--gold); font-style:normal; }
-    .intro-note {
-      margin:46px 0 0 auto; max-width:390px; color:var(--muted);
-      font-size:.9rem; line-height:1.75;
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition:
+        transform 220ms var(--ease),
+        background 220ms var(--ease),
+        border-color 220ms var(--ease),
+        box-shadow 220ms var(--ease);
+      cursor: pointer;
     }
 
-    /* ---------------- SERVICES ---------------- */
-    .services { background:var(--ivory); color:var(--black); padding: 140px 0 0; }
-    .section-head { display:flex; justify-content:space-between; align-items:end; gap:30px; margin-bottom:72px; }
-    .section-title {
-      font-family:var(--serif); font-weight:500; font-size:clamp(3rem, 6vw, 6rem);
-      line-height:.88; letter-spacing:-.05em; margin:12px 0 0;
-    }
-    .section-number { font-family:var(--serif); font-size:3rem; opacity:.22; }
-    .service {
-      min-height: 76vh; display:grid; grid-template-columns:1fr 1fr;
-      border-top:1px solid rgba(11,11,13,.16);
-    }
-    .service.reverse .service-image { order:2; }
-    .service.reverse .service-copy { order:1; }
-    .service-image { min-height:620px; overflow:hidden; position:relative; }
-    .service-image img { height:100%; object-fit:cover; transition:transform 1s var(--ease); }
-    .service:hover img { transform:scale(1.045); }
-    .service-copy { display:flex; flex-direction:column; justify-content:center; padding:70px clamp(40px,7vw,110px); }
-    .service-index { font-family:var(--serif); font-size:1.1rem; opacity:.4; margin-bottom:34px; }
-    .service h3 { font-family:var(--serif); font-size:clamp(3rem,5.2vw,5.5rem); line-height:.9; font-weight:500; letter-spacing:-.05em; margin:14px 0 24px; }
-    .service p { max-width:460px; color:#5e5b56; line-height:1.8; }
-    .service-link { margin-top:35px; color:var(--black); text-transform:uppercase; letter-spacing:.18em; font-size:.7rem; font-weight:700; display:inline-flex; gap:14px; align-items:center; }
-    .service-link span { color:var(--gold); font-size:1.1rem; }
-
-    /* ---------------- REVEAL ---------------- */
-    .reveal { opacity:0; transform:translateY(45px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
-    .reveal.is-visible { opacity:1; transform:none; }
-    .reveal.delay-1 { transition-delay:.12s; }
-    .reveal.delay-2 { transition-delay:.22s; }
-    .reveal.delay-3 { transition-delay:.32s; }
-
-    /* ---------------- GALLERY ---------------- */
-    .gallery { padding:150px 0; background:var(--black); }
-    .gallery-head { display:grid; grid-template-columns:1.3fr 1fr; gap:50px; align-items:end; margin-bottom:58px; }
-    .gallery-intro { color:var(--muted); line-height:1.75; max-width:440px; justify-self:end; }
-    .masonry { columns:3 250px; column-gap:16px; }
-    .tile { break-inside:avoid; margin:0 0 16px; position:relative; overflow:hidden; cursor:pointer; }
-    .tile img { transition:transform .8s var(--ease), filter .5s ease; }
-    .tile::after { content:""; position:absolute; inset:0; box-shadow:inset 0 0 0 1px transparent; transition:box-shadow .4s ease, background .4s ease; }
-    .tile:hover img { transform:scale(1.04); filter:saturate(1.08); }
-    .tile:hover::after { box-shadow:inset 0 0 0 1px rgba(212,175,106,.8), inset 0 0 55px rgba(212,175,106,.13); }
-    .tile figcaption { position:absolute; left:18px; bottom:16px; z-index:2; font-size:.65rem; letter-spacing:.16em; text-transform:uppercase; opacity:0; transform:translateY(8px); transition:.35s ease; }
-    .tile:hover figcaption { opacity:1; transform:none; }
-
-    /* ---------------- BEFORE AFTER ---------------- */
-    .comparison { background:var(--burgundy); padding:140px 0; }
-    .comparison-grid { display:grid; grid-template-columns:.8fr 1.6fr; gap:80px; align-items:center; }
-    .comparison-copy p { color:rgba(247,243,236,.68); line-height:1.8; max-width:400px; }
-    .compare {
-      position:relative; aspect-ratio: 4/3; overflow:hidden; border:1px solid rgba(212,175,106,.5);
-      box-shadow:0 25px 80px rgba(0,0,0,.25);
-      --split:50%;
-    }
-    .compare > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-    .compare-after { clip-path:inset(0 0 0 var(--split)); }
-    .compare-label {
-      position:absolute; top:18px; z-index:5; padding:8px 10px;
-      font-size:.6rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
-      background:rgba(11,11,13,.65); backdrop-filter:blur(8px); border:1px solid rgba(247,243,236,.18);
-    }
-    .label-before { left:18px; }
-    .label-after { right:18px; }
-    .compare input {
-      position:absolute; inset:0; width:100%; height:100%; z-index:10; opacity:0; cursor:ew-resize;
-    }
-    .compare-line { position:absolute; top:0; bottom:0; left:var(--split); width:1px; background:var(--ivory); z-index:8; pointer-events:none; }
-    .compare-handle {
-      position:absolute; top:50%; left:var(--split); transform:translate(-50%,-50%); z-index:9;
-      width:48px; height:48px; border-radius:50%; background:var(--gold); color:var(--black);
-      display:grid; place-items:center; font-size:1rem; pointer-events:none;
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
-    /* ---------------- PRESS ---------------- */
-    .press { padding:55px 0; border-bottom:1px solid var(--line); border-top:1px solid var(--line); overflow:hidden; }
-    .marquee { display:flex; width:max-content; animation:marquee 28s linear infinite; }
-    .press-row { display:flex; align-items:center; gap:70px; padding-right:70px; }
-    .press-row span { font-family:var(--serif); font-size:clamp(1.7rem,3vw,3rem); letter-spacing:.06em; color:rgba(247,243,236,.52); white-space:nowrap; }
-    .press-row i { width:6px; height:6px; border-radius:50%; background:var(--gold); display:block; }
-
-    /* ---------------- TESTIMONIALS ---------------- */
-    .testimonials { padding:150px 0; background:var(--black-2); }
-    .testimonial-grid { display:grid; grid-template-columns:1fr 1.7fr; gap:80px; align-items:start; }
-    .portrait-stack { position:sticky; top:120px; }
-    .portrait-stack img { aspect-ratio:4/5; object-fit:cover; filter:saturate(.78); }
-    .portrait-caption { display:flex; justify-content:space-between; padding-top:15px; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
-    .quote-card { padding:0 0 72px; margin-bottom:72px; border-bottom:1px solid var(--line); }
-    .quote-mark { color:var(--gold); font-family:var(--serif); font-size:5rem; line-height:.5; }
-    .quote { margin:25px 0; font-family:var(--serif); font-size:clamp(2rem,4vw,4.3rem); line-height:1; letter-spacing:-.04em; }
-    .quote-meta { color:var(--muted); text-transform:uppercase; letter-spacing:.17em; font-size:.65rem; }
-
-    /* ---------------- CONTACT ---------------- */
-    .contact { min-height:90vh; display:grid; grid-template-columns:1fr 1fr; background:var(--ivory); color:var(--black); }
-    .contact-image { min-height:700px; background:url("https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1600&q=88") center/cover; position:relative; }
-    .contact-image::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(11,11,13,.05), rgba(11,11,13,.5)); }
-    .contact-copy { padding:90px clamp(35px,8vw,120px); display:flex; flex-direction:column; justify-content:center; }
-    .contact-copy .section-title { color:var(--black); }
-    .form { margin-top:42px; display:grid; gap:22px; }
-    .field { position:relative; }
-    .field input, .field textarea {
-      width:100%; border:0; border-bottom:1px solid rgba(11,11,13,.25);
-      background:transparent; padding:14px 0; outline:0; color:var(--black);
+    .btn-primary {
+      background: var(--copper);
+      color: var(--white);
+      box-shadow: 0 12px 28px rgba(200, 121, 65, 0.2);
     }
-    .field textarea { resize:vertical; min-height:100px; }
+
+    .btn-primary:hover {
+      background: var(--copper-light);
+      box-shadow: 0 16px 34px rgba(200, 121, 65, 0.28);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.34);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--copper);
+      background: rgba(200, 121, 65, 0.08);
+    }
+
+    .btn-dark-outline {
+      border-color: rgba(14, 26, 43, 0.25);
+      color: var(--navy);
+    }
+
+    .btn-dark-outline:hover {
+      border-color: var(--copper);
+      color: var(--copper);
+    }
+
+    .btn-arrow {
+      font-size: 1.1rem;
+      line-height: 0;
+      transition: transform 220ms var(--ease);
+    }
+
+    .btn:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: var(--header-height);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(14, 26, 43, 0.84);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition:
+        background 240ms ease,
+        box-shadow 240ms ease;
+    }
+
+    .site-header.scrolled {
+      background: rgba(14, 26, 43, 0.96);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+    }
+
+    .nav {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      border: 2px solid var(--copper);
+      border-radius: 50%;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      position: absolute;
+      left: -8px;
+      width: 42px;
+      height: 10px;
+      border: 2px solid var(--copper);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .brand-mark::before {
+      top: 3px;
+    }
+
+    .brand-mark::after {
+      top: 13px;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--steel-light);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 180ms ease;
+    }
+
+    .nav-links a::after {
+      position: absolute;
+      right: 0;
+      bottom: -8px;
+      left: 0;
+      height: 1px;
+      background: var(--copper);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 220ms var(--ease);
+      content: "";
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .nav-phone {
+      display: none;
+      color: var(--white);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .nav-phone span {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--copper-light);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(0.78);
+      transform: scale(1.04);
+      animation: heroZoom 12s ease-out forwards;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(14, 26, 43, 0.94) 0%, rgba(14, 26, 43, 0.76) 44%, rgba(14, 26, 43, 0.26) 100%),
+        linear-gradient(0deg, rgba(14, 26, 43, 0.82) 0%, rgba(14, 26, 43, 0.04) 68%);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.1;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+      padding: 150px 0 80px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      color: var(--copper-light);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: riseIn 800ms 150ms var(--ease) forwards;
+    }
+
+    .hero-kicker::before {
+      width: 36px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    .hero h1 {
+      max-width: 880px;
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(3.3rem, 8vw, 7.8rem);
+      font-weight: 600;
+      letter-spacing: -0.07em;
+      line-height: 0.88;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: riseIn 900ms 260ms var(--ease) forwards;
+    }
+
+    .hero-copy {
+      max-width: 610px;
+      margin: 28px 0 0;
+      color: #d4d9de;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      opacity: 0;
+      transform: translateY(25px);
+      animation: riseIn 800ms 430ms var(--ease) forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: riseIn 800ms 560ms var(--ease) forwards;
+    }
+
+    .hero-emergency {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+      color: var(--steel-light);
+      font-size: 0.78rem;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--copper);
+      box-shadow: 0 0 0 0 rgba(200, 121, 65, 0.6);
+      animation: pulse 2s infinite;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      z-index: 3;
+      right: 28px;
+      bottom: 32px;
+      display: none;
+      writing-mode: vertical-rl;
+      color: rgba(255, 255, 255, 0.56);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* Trust bar */
+    .trust-bar {
+      position: relative;
+      z-index: 4;
+      background: var(--navy);
+      color: var(--white);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trust-item {
+      min-height: 106px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 8px;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .trust-item:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .trust-icon {
+      flex: 0 0 38px;
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(200, 121, 65, 0.38);
+      border-radius: 50%;
+      color: var(--copper);
+    }
+
+    .trust-icon svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .trust-value {
+      display: block;
+      color: var(--white);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .trust-label {
+      display: block;
+      margin-top: 4px;
+      color: var(--steel);
+      font-size: 0.68rem;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Services */
+    .services {
+      background: var(--off-white);
+    }
+
+    .services-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 76px;
+    }
+
+    .services-list {
+      position: relative;
+      display: grid;
+      gap: 70px;
+    }
+
+    .flow-rail {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      display: block;
+      width: 110px;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .flow-rail svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .flow-base,
+    .flow-progress {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .flow-base {
+      stroke: rgba(200, 121, 65, 0.13);
+      stroke-width: 1;
+    }
+
+    .flow-progress {
+      stroke: var(--copper);
+      stroke-width: 2.5;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      filter: drop-shadow(0 0 5px rgba(200, 121, 65, 0.4));
+    }
+
+    .service-card {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      min-height: 520px;
+      background: var(--white);
+      box-shadow: 0 18px 50px rgba(14, 26, 43, 0.08);
+      opacity: 0;
+      transform: translateY(55px);
+      transition:
+        opacity 800ms var(--ease),
+        transform 800ms var(--ease),
+        box-shadow 300ms ease;
+    }
+
+    .service-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-card:hover {
+      box-shadow: 0 24px 65px rgba(14, 26, 43, 0.14);
+    }
+
+    .service-card:nth-child(even) {
+      direction: rtl;
+    }
+
+    .service-card:nth-child(even) > * {
+      direction: ltr;
+    }
+
+    .service-image {
+      position: relative;
+      min-height: 330px;
+      overflow: hidden;
+    }
+
+    .service-image::after {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      content: "";
+      pointer-events: none;
+    }
+
+    .service-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 800ms var(--ease);
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.045);
+    }
+
+    .service-number {
+      position: absolute;
+      z-index: 2;
+      top: 20px;
+      left: 20px;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(14, 26, 43, 0.72);
+      color: var(--white);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    .service-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 42px 34px;
+    }
+
+    .service-content h3 {
+      margin: 10px 0 14px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.9rem, 4vw, 3.1rem);
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 1;
+    }
+
+    .service-content p {
+      max-width: 480px;
+      margin: 0;
+      color: #596572;
+    }
+
+    .service-list {
+      display: grid;
+      gap: 9px;
+      margin: 24px 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #334150;
+      font-size: 0.85rem;
+    }
+
+    .service-list li::before {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border: 1px solid var(--copper);
+      border-radius: 50%;
+      content: "";
+    }
+
+    /* Emergency banner */
+    .emergency-banner {
+      position: relative;
+      overflow: hidden;
+      background: var(--copper);
+      color: var(--white);
+    }
+
+    .emergency-banner::before {
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 60px rgba(255, 255, 255, 0.035),
+        0 0 0 120px rgba(255, 255, 255, 0.025);
+      content: "";
+    }
+
+    .emergency-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .emergency-title {
+      max-width: 850px;
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.6rem, 6vw, 5.8rem);
+      font-weight: 600;
+      letter-spacing: -0.06em;
+      line-height: 0.92;
+    }
+
+    .emergency-copy {
+      max-width: 620px;
+      margin: 20px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .emergency-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      align-self: flex-start;
+      padding: 16px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: 700;
+      transition: background 180ms ease;
+    }
+
+    .emergency-phone:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .phone-icon {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--copper);
+    }
+
+    .phone-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Process */
+    .process {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .process .section-label {
+      color: var(--copper-light);
+    }
+
+    .process-grid {
+      display: grid;
+      gap: 60px;
+      margin-top: 70px;
+    }
+
+    .process-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 20px;
+      opacity: 0;
+      transform: translateX(-35px);
+      transition:
+        opacity 700ms var(--ease),
+        transform 700ms var(--ease);
+    }
+
+    .process-step.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .process-step::after {
+      position: absolute;
+      top: 58px;
+      bottom: -60px;
+      left: 28px;
+      width: 1px;
+      background: rgba(139, 150, 163, 0.22);
+      content: "";
+    }
+
+    .process-step:last-child::after {
+      display: none;
+    }
+
+    .process-number {
+      position: relative;
+      z-index: 2;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(200, 121, 65, 0.55);
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--copper);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .process-step h3 {
+      margin: 3px 0 9px;
+      color: var(--white);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .process-step p {
+      max-width: 480px;
+      margin: 0;
+      color: var(--steel);
+      font-size: 0.94rem;
+    }
+
+    .process-footnote {
+      margin-top: 68px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--steel);
+      font-size: 0.76rem;
+    }
+
+    /* Gallery */
+    .gallery {
+      background: var(--off-white);
+    }
+
+    .gallery-header {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .gallery-item {
+      position: relative;
+      min-height: 210px;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .gallery-item:first-child {
+      grid-column: 1 / -1;
+      min-height: 330px;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      object-fit: cover;
+      transition:
+        transform 650ms var(--ease),
+        filter 650ms var(--ease);
+    }
+
+    .gallery-item::after {
+      position: absolute;
+      inset: 0;
+      border: 1px solid transparent;
+      background: linear-gradient(180deg, transparent 45%, rgba(14, 26, 43, 0.7));
+      transition: border-color 250ms ease;
+      content: "";
+    }
+
+    .gallery-item:hover img {
+      filter: saturate(1.08);
+      transform: scale(1.055);
+    }
+
+    .gallery-item:hover::after {
+      border-color: rgba(200, 121, 65, 0.72);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      z-index: 2;
+      right: 16px;
+      bottom: 14px;
+      left: 16px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--white);
+    }
+
+    .gallery-caption strong {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .gallery-caption span {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.67rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: #eae7e1;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 55px;
+    }
+
+    .testimonial {
+      padding: 30px;
+      background: var(--white);
+      box-shadow: 0 12px 40px rgba(14, 26, 43, 0.06);
+      opacity: 0;
+      transform: translateY(35px);
+      transition:
+        opacity 700ms var(--ease),
+        transform 700ms var(--ease),
+        box-shadow 250ms ease;
+    }
+
+    .testimonial.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .testimonial:hover {
+      box-shadow: 0 20px 50px rgba(14, 26, 43, 0.1);
+    }
+
+    .stars {
+      color: var(--copper);
+      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+    }
+
+    .testimonial blockquote {
+      margin: 22px 0 28px;
+      color: var(--navy);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.18rem;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.35;
+    }
+
+    .customer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .customer-avatar {
+      width: 42px;
+      height: 42px;
+      overflow: hidden;
+      border-radius: 50%;
+    }
+
+    .customer-avatar img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .customer-name {
+      display: block;
+      color: var(--navy);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .customer-meta {
+      display: block;
+      color: var(--steel);
+      font-size: 0.68rem;
+    }
+
+    /* Service area */
+    .area {
+      background: var(--white);
+    }
+
+    .area-layout {
+      display: grid;
+      gap: 45px;
+      margin-top: 65px;
+    }
+
+    .map-panel {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      border: 1px solid rgba(14, 26, 43, 0.12);
+      background:
+        linear-gradient(rgba(14, 26, 43, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14, 26, 43, 0.05) 1px, transparent 1px),
+        #f0efeb;
+      background-size: 40px 40px;
+    }
+
+    .map-panel::before {
+      position: absolute;
+      inset: 12% 15%;
+      border: 1px dashed rgba(14, 26, 43, 0.25);
+      border-radius: 45% 55% 48% 52%;
+      transform: rotate(-8deg);
+      content: "";
+    }
+
+    .map-panel::after {
+      position: absolute;
+      inset: 24% 28%;
+      border: 1px solid rgba(200, 121, 65, 0.25);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 50px rgba(200, 121, 65, 0.05),
+        0 0 0 100px rgba(200, 121, 65, 0.035);
+      content: "";
+    }
+
+    .map-label {
+      position: absolute;
+      z-index: 3;
+      top: 22px;
+      left: 22px;
+      padding: 8px 11px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .map-pin {
+      position: absolute;
+      z-index: 4;
+      top: 48%;
+      left: 52%;
+      width: 22px;
+      height: 22px;
+      border: 4px solid var(--white);
+      border-radius: 50%;
+      background: var(--copper);
+      box-shadow: 0 0 0 9px rgba(200, 121, 65, 0.18);
+    }
+
+    .area-copy h3 {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.7rem;
+      letter-spacing: -0.04em;
+    }
+
+    .area-copy p {
+      margin: 14px 0 25px;
+      color: #596572;
+    }
+
+    .area-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .area-list li {
+      padding: 11px 12px;
+      border: 1px solid rgba(14, 26, 43, 0.1);
+      color: #3e4a57;
+      font-size: 0.78rem;
+    }
+
+    .area-list li::before {
+      margin-right: 7px;
+      color: var(--copper);
+      content: "•";
+    }
+
+    /* Booking */
+    .booking {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .booking-layout {
+      display: grid;
+      gap: 0;
+      margin-top: 60px;
+      background: var(--white);
+    }
+
+    .booking-image {
+      min-height: 350px;
+      overflow: hidden;
+    }
+
+    .booking-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .booking-form-wrap {
+      padding: 38px 26px;
+      color: var(--navy);
+    }
+
+    .booking-form-wrap h3 {
+      margin: 0 0 8px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .booking-form-wrap > p {
+      margin: 0 0 25px;
+      color: #64707c;
+      font-size: 0.9rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 15px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
     .field label {
-      position:absolute; left:0; top:13px; pointer-events:none; color:#76716a;
-      font-size:.78rem; transition:.25s ease;
-    }
-    .field input:focus + label, .field input:not(:placeholder-shown) + label,
-    .field textarea:focus + label, .field textarea:not(:placeholder-shown) + label {
-      transform:translateY(-22px); font-size:.62rem; color:var(--gold); letter-spacing:.08em; text-transform:uppercase;
-    }
-    .form .btn { width:max-content; margin-top:12px; }
-
-    /* ---------------- FOOTER ---------------- */
-    footer { padding:70px 0 30px; background:var(--black); }
-    .footer-top { display:flex; justify-content:space-between; gap:40px; padding-bottom:65px; border-bottom:1px solid var(--line); }
-    .footer-brand { font-family:var(--serif); font-size:clamp(3rem,6vw,6rem); line-height:.8; }
-    .footer-links { display:flex; gap:40px; color:var(--muted); font-size:.72rem; text-transform:uppercase; letter-spacing:.13em; }
-    .footer-bottom { display:flex; justify-content:space-between; padding-top:22px; color:#65625e; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; }
-
-    /* ---------------- KEYFRAMES ---------------- */
-    @keyframes rise { to { opacity:1; transform:none; } }
-    @keyframes heroZoom { from { transform:scale(1.08); } to { transform:scale(1.03); } }
-    @keyframes spotlightSweep {
-      0% { opacity:0; transform:rotate(-20deg) scale(.8); }
-      18% { opacity:1; }
-      100% { opacity:.62; transform:rotate(18deg) scale(1.15); }
-    }
-    @keyframes marquee { to { transform:translateX(-50%); } }
-
-    @media (max-width: 900px) {
-      .nav { padding:18px 20px; }
-      .nav-links { display:none; }
-      .menu { display:block; }
-      .container { width:min(100% - 32px, 1240px); }
-      .hero-content { padding:140px 0 45px; }
-      .hero-meta { margin-top:45px; }
-      .intro { padding:95px 0; }
-      .intro-grid, .gallery-head, .comparison-grid, .testimonial-grid, .contact { grid-template-columns:1fr; }
-      .intro-note { margin:30px 0 0; }
-      .services { padding-top:95px; }
-      .service { min-height:0; grid-template-columns:1fr; }
-      .service.reverse .service-image, .service.reverse .service-copy { order:initial; }
-      .service-image { min-height:52vh; max-height:650px; }
-      .service-copy { padding:65px 25px 75px; }
-      .gallery, .testimonials, .comparison { padding:95px 0; }
-      .gallery-intro { justify-self:start; }
-      .portrait-stack { position:relative; top:auto; max-width:430px; }
-      .contact-image { min-height:55vh; }
-      .footer-top { flex-direction:column; }
-      .footer-links { flex-wrap:wrap; }
+      color: #4d5864;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    @media (max-width: 560px) {
-      h1 { font-size:clamp(3.8rem,17vw,6.3rem); }
-      .hero-copy { font-size:.9rem; }
-      .hero-meta { align-items:start; flex-direction:column; }
-      .section-head { margin-bottom:48px; }
-      .service-image { min-height:45vh; }
-      .compare { aspect-ratio:1/1; }
-      .footer-bottom { flex-direction:column; gap:12px; }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 50px;
+      padding: 12px 13px;
+      border: 1px solid #d8d9d8;
+      border-radius: 2px;
+      outline: none;
+      background: #fafaf8;
+      color: var(--navy);
+      transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior:auto; }
-      *, *::before, *::after {
-        animation-duration:.001ms !important;
-        animation-iteration-count:1 !important;
-        transition-duration:.001ms !important;
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--copper);
+      box-shadow: 0 0 0 3px rgba(200, 121, 65, 0.1);
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    .form-status {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--copper);
+      font-size: 0.78rem;
+    }
+
+    .booking-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #e1e2df;
+    }
+
+    .booking-contact span {
+      color: #74808b;
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .booking-contact a {
+      color: var(--navy);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 70px 0 30px;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .footer-top {
+      display: grid;
+      gap: 50px;
+      padding-bottom: 55px;
+    }
+
+    .footer-brand {
+      max-width: 330px;
+    }
+
+    .footer-brand p {
+      margin: 18px 0 0;
+      color: var(--steel);
+      font-size: 0.85rem;
+    }
+
+    .footer-heading {
+      margin: 0 0 16px;
+      color: var(--white);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--steel);
+      font-size: 0.8rem;
+      transition: color 180ms ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--copper-light);
+    }
+
+    .footer-phone {
+      display: inline-block;
+      margin-top: 5px;
+      color: var(--white);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+      color: #65717e;
+      font-size: 0.68rem;
+    }
+
+    .socials {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      color: var(--steel);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      transition:
+        color 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .social:hover {
+      border-color: var(--copper);
+      color: var(--copper-light);
+    }
+
+    /* Mobile emergency CTA */
+    .mobile-call {
+      position: fixed;
+      z-index: 90;
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+      display: flex;
+      min-height: 58px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 3px;
+      background: var(--copper);
+      color: var(--white);
+      box-shadow: 0 14px 36px rgba(14, 26, 43, 0.25);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity 750ms var(--ease),
+        transform 750ms var(--ease);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animations */
+    @keyframes riseIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      .reveal { opacity:1; transform:none; }
-      .marquee { animation:none; overflow:auto; width:100%; }
+    }
+
+    @keyframes heroZoom {
+      from {
+        transform: scale(1.04);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(200, 121, 65, 0.65);
+      }
+
+      70% {
+        box-shadow: 0 0 0 9px rgba(200, 121, 65, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(200, 121, 65, 0);
+      }
+    }
+
+    /* Tablet */
+    @media (min-width: 700px) {
+      .container {
+        width: min(calc(100% - 64px), var(--max-width));
+      }
+
+      .hero-content {
+        width: min(calc(100% - 64px), var(--max-width));
+        padding-bottom: 110px;
+      }
+
+      .hero-scroll {
+        display: block;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .trust-item,
+      .trust-item:nth-child(2n) {
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .trust-item:last-child {
+        border-right: 0;
+      }
+
+      .services-heading {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+
+      .service-card {
+        grid-template-columns: 1.05fr 0.95fr;
+      }
+
+      .service-image {
+        min-height: 520px;
+      }
+
+      .emergency-inner {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+
+      .emergency-copy {
+        margin-top: 24px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px 50px;
+      }
+
+      .process-step::after {
+        display: none;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+        min-height: 500px;
+      }
+
+      .gallery-item:nth-child(2),
+      .gallery-item:nth-child(3) {
+        min-height: 245px;
+      }
+
+      .gallery-item:nth-child(4),
+      .gallery-item:nth-child(5) {
+        min-height: 245px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .area-layout {
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+      }
+
+      .booking-layout {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+
+      .booking-image {
+        min-height: 690px;
+      }
+
+      .booking-form-wrap {
+        padding: 60px 55px;
+      }
+
+      .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      .footer-top {
+        grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .mobile-call {
+        display: none;
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+      :root {
+        --header-height: 82px;
+      }
+
+      .nav-links,
+      .nav-phone {
+        display: flex;
+      }
+
+      .nav-phone {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .section {
+        padding: 150px 0;
+      }
+
+      .hero-content {
+        padding-top: 190px;
+      }
+
+      .services-list {
+        gap: 105px;
+      }
+
+      .service-card {
+        min-height: 610px;
+      }
+
+      .service-image {
+        min-height: 610px;
+      }
+
+      .service-content {
+        padding: 60px 65px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+
+      .process-step {
+        display: block;
+        transform: translateY(30px);
+      }
+
+      .process-step.is-visible {
+        transform: translateY(0);
+      }
+
+      .process-number {
+        margin-bottom: 24px;
+      }
+
+      .process-step::after {
+        display: block;
+        top: 29px;
+        right: -45px;
+        bottom: auto;
+        left: auto;
+        width: 60px;
+        height: 1px;
+      }
+
+      .process-step:last-child::after {
+        display: none;
+      }
+
+      .gallery-item:first-child {
+        min-height: 590px;
+      }
+
+      .gallery-item:nth-child(2),
+      .gallery-item:nth-child(3),
+      .gallery-item:nth-child(4),
+      .gallery-item:nth-child(5) {
+        min-height: 290px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .hero h1 {
+        max-width: 980px;
+      }
+
+      .service-content {
+        padding-inline: 80px;
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .hero-media img {
+        transform: none;
+      }
+
+      .hero-kicker,
+      .hero h1,
+      .hero-copy,
+      .hero-actions {
+        opacity: 1;
+        transform: none;
+      }
+
+      .reveal,
+      .service-card,
+      .process-step,
+      .testimonial {
+        opacity: 1;
+        transform: none;
+      }
+
+      .flow-progress {
+        stroke-dashoffset: 0 !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header" id="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="FLOWSTATE PLUMBING home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        FLOWSTATE PLUMBING
+      </a>
 
-  <header class="nav" id="nav">
-    <a href="#top" class="brand" aria-label="SMILE STUDIO home">
-      <span class="brand-mark" aria-hidden="true"></span>
-      SMILE STUDIO
-    </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#philosophy">Philosophy</a>
-      <a href="#services">Services</a>
-      <a href="#results">Results</a>
-      <a href="#press">Press</a>
-      <a href="#contact" class="nav-cta">Consultation</a>
-    </nav>
-    <button class="menu" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#process">Our Process</a>
+        <a href="#work">Our Work</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="nav-phone" href="tel:+15550194820">
+        <span>24/7 Emergency Line</span>
+        (555) 019-4820
+      </a>
+    </div>
   </header>
 
   <main id="top">
-    <!-- HERO: spotlight beam + cursor-reactive glow -->
-    <section class="hero" id="hero" aria-labelledby="hero-title">
-      <div class="hero-media" aria-hidden="true"></div>
-      <div class="container hero-content">
-        <div class="eyebrow hero-kicker">Private Cosmetic Dentistry · New York / London / Dubai</div>
-        <h1 id="hero-title">The World's Most Photographed Smiles Start Here.</h1>
-        <p class="hero-copy">Precision veneers, cinematic smile makeovers and understated artistry for people who expect their smile to look extraordinary — in every light.</p>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2200&q=88"
+          alt=""
+        />
+      </div>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-kicker">24/7 Emergency Plumbing</div>
+
+        <h1 id="hero-title">Fast, Reliable Plumbing — Day or Night.</h1>
+
+        <p class="hero-copy">
+          When water is moving where it shouldn't, you need a professional
+          who shows up ready. Licensed technicians, transparent pricing,
+          precise repairs, and a response built around your emergency.
+        </p>
+
         <div class="hero-actions">
-          <a class="btn btn-gold" href="#contact">Book Your Consultation <span>↗</span></a>
-          <a class="btn btn-ghost" href="#results">View the results</a>
+          <a class="btn btn-primary" href="tel:+15550194820">
+            Call Now
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="btn btn-outline" href="#contact">
+            Book Online
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
         </div>
-        <div class="hero-meta">
-          <span>Dr. [Placeholder Name] · Cosmetic Dentist</span>
-          <span class="scroll-cue"><i class="scroll-line"></i> Scroll to discover</span>
+
+        <div class="hero-emergency">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Dispatching now in your area
         </div>
       </div>
+
+      <div class="hero-scroll">Scroll to see how we work</div>
     </section>
 
-    <!-- EDITORIAL INTRO -->
-    <section class="intro" id="philosophy">
-      <div class="container intro-grid">
-        <div class="reveal">
-          <div class="eyebrow">The Philosophy</div>
-          <div class="intro-rule"></div>
-        </div>
-        <div>
-          <p class="pullquote reveal delay-1">“A great smile should never announce the dentistry. It should simply make <em>the person</em> unforgettable.”</p>
-          <p class="intro-note reveal delay-2">Dr. [Placeholder Name] combines facial aesthetics, modern digital planning and obsessive attention to proportion to create smiles that feel personal — never manufactured.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SIGNATURE SERVICES -->
-    <section class="services" id="services">
-      <div class="container section-head reveal">
-        <div>
-          <div class="eyebrow">Signature Services</div>
-          <h2 class="section-title">The Art of<br>the Smile.</h2>
-        </div>
-        <div class="section-number">01—04</div>
-      </div>
-
-      <article class="service">
-        <div class="service-image reveal"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1500&q=88" alt="Close-up dental treatment and cosmetic dentistry"></div>
-        <div class="service-copy reveal delay-1">
-          <div class="service-index">01 / 04</div>
-          <div class="eyebrow">Signature Treatment</div>
-          <h3>Porcelain<br>Veneers</h3>
-          <p>Ultra-thin porcelain, designed around your face, lip line and natural expression. The goal is not “perfect teeth” — it is an effortless, camera-ready smile.</p>
-          <a href="#contact" class="service-link">Discover veneers <span>↗</span></a>
-        </div>
-      </article>
-
-      <article class="service reverse">
-        <div class="service-image reveal"><img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1500&q=88" alt="Elegant professional portrait for smile makeover consultation"></div>
-        <div class="service-copy reveal delay-1">
-          <div class="service-index">02 / 04</div>
-          <div class="eyebrow">The Transformation</div>
-          <h3>Smile<br>Makeovers</h3>
-          <p>A complete aesthetic blueprint — combining shade, shape, symmetry and facial balance to create a transformation that still looks unmistakably like you.</p>
-          <a href="#contact" class="service-link">Explore smile design <span>↗</span></a>
-        </div>
-      </article>
-
-      <article class="service">
-        <div class="service-image reveal"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1500&q=88" alt="Close-up smile and cosmetic dental aesthetic"></div>
-        <div class="service-copy reveal delay-1">
-          <div class="service-index">03 / 04</div>
-          <div class="eyebrow">The Polish</div>
-          <h3>Signature<br>Whitening</h3>
-          <p>Refined whitening protocols for a luminous, natural result — calibrated to your complexion and designed to photograph beautifully under warm and cool light.</p>
-          <a href="#contact" class="service-link">See whitening options <span>↗</span></a>
-        </div>
-      </article>
-
-      <article class="service reverse">
-        <div class="service-image reveal"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1500&q=88" alt="Modern luxury dental clinic interior"></div>
-        <div class="service-copy reveal delay-1">
-          <div class="service-index">04 / 04</div>
-          <div class="eyebrow">Quiet Correction</div>
-          <h3>Invisalign<br>Refinement</h3>
-          <p>Discreet alignment planning for patients who want a more balanced smile without a visible orthodontic chapter.</p>
-          <a href="#contact" class="service-link">Start your consultation <span>↗</span></a>
-        </div>
-      </article>
-    </section>
-
-    <!-- GALLERY / RED CARPET RESULTS -->
-    <section class="gallery" id="results">
-      <div class="container">
-        <div class="gallery-head">
-          <div class="reveal">
-            <div class="eyebrow">Red Carpet Results</div>
-            <h2 class="section-title">Made for<br>the close-up.</h2>
+    <!-- TRUST BAR -->
+    <section class="trust-bar" aria-label="Company trust signals">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M4 19h16M6 16V8h12v8M9 8V5h6v3" />
+            </svg>
           </div>
-          <p class="gallery-intro reveal delay-1">A curated visual language of proportion, light and expression. Replace these editorial placeholders with your practice's approved clinical photography before launch.</p>
+          <div>
+            <span class="trust-value">15+ Years</span>
+            <span class="trust-label">In Business</span>
+          </div>
         </div>
 
-        <div class="masonry">
-          <figure class="tile reveal"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=88" alt="Close-up cosmetic smile"><figcaption>Smile Study / 01</figcaption></figure>
-          <figure class="tile reveal delay-1"><img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1000&q=88" alt="Editorial portrait"><figcaption>Portrait / 02</figcaption></figure>
-          <figure class="tile reveal delay-2"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=88" alt="Luxury clinic interior"><figcaption>The Studio / 03</figcaption></figure>
-          <figure class="tile reveal"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=88" alt="Cosmetic dental close-up"><figcaption>Detail / 04</figcaption></figure>
-          <figure class="tile reveal delay-1"><img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1100&q=88" alt="Elegant patient portrait"><figcaption>Afterglow / 05</figcaption></figure>
-          <figure class="tile reveal delay-2"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1100&q=88" alt="Polished smile detail"><figcaption>Smile Study / 06</figcaption></figure>
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 3l7 3v5c0 4.5-2.8 8-7 10-4.2-2-7-5.5-7-10V6l7-3Z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+          <div>
+            <span class="trust-value">Licensed + Insured</span>
+            <span class="trust-label">Professional Work</span>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="12" r="8" />
+              <path d="M12 7v5l3 2" />
+            </svg>
+          </div>
+          <div>
+            <span class="trust-value">20 Min Avg.</span>
+            <span class="trust-label">Emergency Response</span>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z" />
+            </svg>
+          </div>
+          <div>
+            <span class="trust-value">5.0 / 5</span>
+            <span class="trust-label">Customer Rating</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- BEFORE / AFTER INTERACTIVE -->
-    <section class="comparison" aria-labelledby="compare-title">
-      <div class="container comparison-grid">
-        <div class="comparison-copy reveal">
-          <div class="eyebrow">The Transformation</div>
-          <h2 class="section-title" id="compare-title">See the<br>difference.</h2>
-          <p>Drag the spotlight across the image to reveal the transformation. Replace the demo images with verified before/after clinical photography and appropriate patient consent.</p>
+    <!-- SERVICES -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="services-heading reveal">
+          <div>
+            <span class="section-label">Our Services</span>
+            <h2 class="section-heading" id="services-title">
+              Precision work. Clean results. No surprises.
+            </h2>
+          </div>
+
+          <p class="section-intro">
+            From a midnight leak to a planned renovation, our technicians
+            diagnose the real problem and fix it correctly the first time.
+          </p>
         </div>
-        <div class="compare reveal delay-1" id="compare">
-          <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1800&q=88" alt="Before result placeholder">
-          <img class="compare-after" src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1800&q=88" alt="After result placeholder">
-          <span class="compare-label label-before">Before</span>
-          <span class="compare-label label-after">After</span>
-          <div class="compare-line"></div>
-          <div class="compare-handle">↔</div>
-          <input id="compareRange" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+
+        <div class="services-list" id="services-list">
+          <!-- Animated flow-line -->
+          <div class="flow-rail" aria-hidden="true">
+            <svg viewBox="0 0 110 2600" preserveAspectRatio="none">
+              <path
+                class="flow-base"
+                d="M55 0 C10 140 100 250 55 390 C10 530 100 640 55 780 C10 920 100 1030 55 1170 C10 1310 100 1420 55 1560 C10 1700 100 1810 55 1950 C10 2090 100 2200 55 2340 C35 2420 40 2500 55 2600"
+              />
+              <path
+                id="flow-progress"
+                class="flow-progress"
+                pathLength="1"
+                d="M55 0 C10 140 100 250 55 390 C10 530 100 640 55 780 C10 920 100 1030 55 1170 C10 1310 100 1420 55 1560 C10 1700 100 1810 55 1950 C10 2090 100 2200 55 2340 C35 2420 40 2500 55 2600"
+              />
+            </svg>
+          </div>
+
+          <article class="service-card">
+            <div class="service-image">
+              <span class="service-number">01</span>
+              <img
+                src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1400&q=85"
+                alt="Professional tools used for plumbing repair"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="service-content">
+              <span class="eyebrow">Leak Detection</span>
+              <h3>Find the leak before it finds your wallet.</h3>
+              <p>
+                We use systematic diagnostics to locate hidden leaks behind
+                walls, beneath floors, and around fixtures without turning
+                your home into a demolition site.
+              </p>
+
+              <ul class="service-list">
+                <li>Hidden and slab leak diagnosis</li>
+                <li>Fixture and supply-line inspection</li>
+                <li>Water-loss source identification</li>
+              </ul>
+
+              <a class="btn btn-dark-outline" href="#contact">
+                Request Leak Service
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image">
+              <span class="service-number">02</span>
+              <img
+                src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1400&q=85"
+                alt="Plumbing pipe and maintenance work"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="service-content">
+              <span class="eyebrow">Drain Cleaning</span>
+              <h3>Clear the blockage. Restore the flow.</h3>
+              <p>
+                Slow drains are usually a warning, not a nuisance. We remove
+                buildup and obstructions while identifying the underlying
+                cause of recurring backups.
+              </p>
+
+              <ul class="service-list">
+                <li>Kitchen and bathroom drains</li>
+                <li>High-pressure drain cleaning</li>
+                <li>Recurring blockage diagnosis</li>
+              </ul>
+
+              <a class="btn btn-dark-outline" href="#contact">
+                Clear My Drain
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image">
+              <span class="service-number">03</span>
+              <img
+                src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1400&q=85"
+                alt="Professional maintenance and mechanical equipment"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="service-content">
+              <span class="eyebrow">Water Heater</span>
+              <h3>Hot water you can count on.</h3>
+              <p>
+                Whether your water heater is leaking, underperforming, or
+                nearing the end of its service life, we'll identify the
+                practical repair or replacement path.
+              </p>
+
+              <ul class="service-list">
+                <li>Water heater diagnostics</li>
+                <li>Repair and replacement</li>
+                <li>Tank and modern system installation</li>
+              </ul>
+
+              <a class="btn btn-dark-outline" href="#contact">
+                Fix My Water Heater
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image">
+              <span class="service-number">04</span>
+              <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=85"
+                alt="Modern pipe installation and construction work"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="service-content">
+              <span class="eyebrow">Pipe Installation</span>
+              <h3>Built right behind the walls.</h3>
+              <p>
+                New construction, remodel, repipe, or replacement — we build
+                dependable water and waste lines with clean routing and
+                serviceability in mind.
+              </p>
+
+              <ul class="service-list">
+                <li>Residential repiping</li>
+                <li>Fixture and appliance connections</li>
+                <li>New construction plumbing</li>
+              </ul>
+
+              <a class="btn btn-dark-outline" href="#contact">
+                Plan My Project
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- PRESS -->
-    <section class="press" id="press" aria-label="Featured in">
-      <div class="marquee">
-        <div class="press-row">
-          <span>VOGUE</span><i></i><span>FORBES</span><i></i><span>GQ</span><i></i><span>ELLE</span><i></i><span>VANITY FAIR</span><i></i><span>WSJ</span><i></i>
+    <!-- EMERGENCY CTA -->
+    <section class="section emergency-banner" aria-labelledby="emergency-title">
+      <div class="container emergency-inner">
+        <div>
+          <span class="section-label" style="color: rgba(255,255,255,.85);">
+            Emergency Services
+          </span>
+
+          <h2 class="emergency-title" id="emergency-title">
+            Plumbing Emergency? We're 20 Minutes Away.
+          </h2>
+
+          <p class="emergency-copy">
+            Burst pipe, overflowing drain, no hot water, or water where it
+            absolutely should not be? Call the emergency line and we'll get
+            a technician moving.
+          </p>
         </div>
-        <div class="press-row" aria-hidden="true">
-          <span>VOGUE</span><i></i><span>FORBES</span><i></i><span>GQ</span><i></i><span>ELLE</span><i></i><span>VANITY FAIR</span><i></i><span>WSJ</span><i></i>
+
+        <a class="emergency-phone" href="tel:+15550194820">
+          <span class="phone-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M5 4h3l2 5-2 1.7a14 14 0 0 0 5.3 5.3L15 14l5 2v3c0 1.1-.9 2-2 2C10.3 21 3 13.7 3 6c0-1.1.9-2 2-2Z" />
+            </svg>
+          </span>
+          (555) 019-4820
+        </a>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section process" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">Our Process</span>
+          <h2 class="section-heading light" id="process-title">
+            No guesswork. Just a clear path forward.
+          </h2>
+          <p class="section-intro light">
+            Good plumbing service should feel predictable. Here's what
+            happens from the first call to the final check.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <div class="process-number">01</div>
+            <div>
+              <h3>Call / Book</h3>
+              <p>
+                Tell us what's happening. We'll ask the right questions and
+                get you scheduled for the appropriate response.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-number">02</div>
+            <div>
+              <h3>Diagnose</h3>
+              <p>
+                We inspect the system, identify the actual failure point, and
+                explain what we found before starting the work.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-number">03</div>
+            <div>
+              <h3>Fix</h3>
+              <p>
+                Your technician completes the agreed repair using professional
+                materials and a clean, methodical approach.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-number">04</div>
+            <div>
+              <h3>Follow Up</h3>
+              <p>
+                We verify the system is operating correctly and make sure you
+                understand what was repaired and what to watch for.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="process-footnote">
+          Every visit includes a straightforward explanation of the problem,
+          recommended solution, and next steps.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section gallery" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="gallery-header reveal">
+          <div>
+            <span class="section-label">Recent Work</span>
+            <h2 class="section-heading" id="work-title">
+              The details matter.
+            </h2>
+          </div>
+
+          <p class="section-intro">
+            A few examples of the kind of repair, installation, and
+            hands-on work our team handles every week.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=88"
+              alt="Technician working on a residential repair"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              <strong>Emergency repair</strong>
+              <span>Residential</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1000&q=85"
+              alt="Close-up of plumbing equipment and pipes"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              <strong>Pipe service</strong>
+              <span>Repair</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=85"
+              alt="Professional hand tools"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              <strong>Precision tools</strong>
+              <span>Craftsmanship</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=85"
+              alt="Construction and installation work"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              <strong>Installation</strong>
+              <span>New work</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1000&q=85"
+              alt="Professional mechanical service equipment"
+              loading="lazy"
+            />
+            <figcaption class="gallery-caption">
+              <strong>System service</strong>
+              <span>Maintenance</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="testimonials" aria-labelledby="testimonials-title">
-      <div class="container testimonial-grid">
-        <div class="portrait-stack reveal">
-          <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1000&q=88" alt="Editorial testimonial portrait placeholder">
-          <div class="portrait-caption"><span>Patient Portrait / Placeholder</span><span>01</span></div>
+    <section class="section testimonials" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">Customer Reviews</span>
+          <h2 class="section-heading" id="reviews-title">
+            What dependable feels like.
+          </h2>
         </div>
-        <div>
-          <div class="eyebrow reveal">Private Notes</div>
-          <h2 class="section-title reveal delay-1" id="testimonials-title" style="margin-bottom:70px;">What they<br>remember.</h2>
 
-          <article class="quote-card reveal">
-            <div class="quote-mark">“</div>
-            <p class="quote">I wanted my smile to look like mine — just the version I had always imagined.</p>
-            <div class="quote-meta">— Client A / Placeholder Testimonial</div>
+        <div class="testimonials-grid">
+          <article class="testimonial">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+
+            <blockquote>
+              “They showed up when they said they would, found the leak
+              quickly, and explained everything before touching a thing.”
+            </blockquote>
+
+            <div class="customer">
+              <div class="customer-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <span class="customer-name">Maya R.</span>
+                <span class="customer-meta">Emergency leak repair</span>
+              </div>
+            </div>
           </article>
 
-          <article class="quote-card reveal">
-            <div class="quote-mark">“</div>
-            <p class="quote">The result is incredibly subtle. People ask if I changed my hair. That is exactly what I wanted.</p>
-            <div class="quote-meta">— Client B / Placeholder Testimonial</div>
+          <article class="testimonial">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+
+            <blockquote>
+              “Professional from the first phone call through cleanup. The
+              water heater is working perfectly and the whole process was
+              straightforward.”
+            </blockquote>
+
+            <div class="customer">
+              <div class="customer-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <span class="customer-name">Daniel K.</span>
+                <span class="customer-meta">Water heater replacement</span>
+              </div>
+            </div>
           </article>
 
-          <article class="quote-card reveal">
-            <div class="quote-mark">“</div>
-            <p class="quote">Every detail felt considered — from the first photograph to the final smile in the mirror.</p>
-            <div class="quote-meta">— Client C / Placeholder Testimonial</div>
+          <article class="testimonial">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+
+            <blockquote>
+              “We had tried another company first. FLOWSTATE actually
+              diagnosed why the drain kept backing up instead of just
+              clearing it again.”
+            </blockquote>
+
+            <div class="customer">
+              <div class="customer-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <span class="customer-name">Elena P.</span>
+                <span class="customer-meta">Drain cleaning</span>
+              </div>
+            </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section class="section area" id="area" aria-labelledby="area-title">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">Service Area</span>
+          <h2 class="section-heading" id="area-title">
+            Local when you need us.
+          </h2>
+          <p class="section-intro">
+            Serving homes and businesses throughout the greater
+            Placeholder Metro Area with 24/7 emergency coverage.
+          </p>
+        </div>
+
+        <div class="area-layout">
+          <div class="map-panel reveal" aria-label="Illustrated service area map">
+            <span class="map-label">Coverage Area</span>
+            <span class="map-pin" aria-hidden="true"></span>
+          </div>
+
+          <div class="area-copy reveal">
+            <h3>Based locally. Dispatching locally.</h3>
+            <p>
+              Our placeholder service area covers the central metro and
+              surrounding neighborhoods. Call us if you're outside the listed
+              areas — we'll let you know whether we can respond.
+            </p>
+
+            <ul class="area-list">
+              <li>Downtown</li>
+              <li>Northside</li>
+              <li>West End</li>
+              <li>Riverside</li>
+              <li>East District</li>
+              <li>South Hills</li>
+              <li>Midtown</li>
+              <li>Lake District</li>
+            </ul>
+
+            <a class="btn btn-dark-outline" href="tel:+15550194820" style="margin-top: 25px;">
+              Check My Address
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT / BOOKING -->
-    <section class="contact" id="contact">
-      <div class="contact-image" aria-label="Elegant portrait placeholder"></div>
-      <div class="contact-copy">
-        <div class="eyebrow reveal">Begin Your Chapter</div>
-        <h2 class="section-title reveal delay-1">Your best<br>light awaits.</h2>
-        <p class="reveal delay-2" style="max-width:470px;color:#66615a;line-height:1.75;">Private consultations are available by appointment. Tell us what you are looking for and our concierge team will be in touch.</p>
+    <section class="section booking" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">Book Service</span>
+          <h2 class="section-heading light" id="contact-title">
+            Tell us what's going on.
+          </h2>
+          <p class="section-intro light">
+            For emergencies, call now. For scheduled service, send the form
+            and our team will follow up.
+          </p>
+        </div>
 
-        <form class="form reveal delay-3" onsubmit="event.preventDefault(); document.getElementById('formStatus').textContent='Thank you — your consultation request has been received.';">
-          <div class="field">
-            <input id="name" name="name" type="text" placeholder=" " required>
-            <label for="name">Full name</label>
+        <div class="booking-layout">
+          <div class="booking-image">
+            <img
+              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1500&q=88"
+              alt="Professional technician working on a home repair"
+              loading="lazy"
+            />
           </div>
-          <div class="field">
-            <input id="email" name="email" type="email" placeholder=" " required>
-            <label for="email">Email address</label>
-          </div>
-          <div class="field">
-            <input id="phone" name="phone" type="tel" placeholder=" ">
-            <label for="phone">Phone number</label>
-          </div>
-          <div class="field">
-            <textarea id="message" name="message" placeholder=" "></textarea>
-            <label for="message">What would you like to transform?</label>
-          </div>
-          <button class="btn btn-gold" type="submit">Request consultation ↗</button>
-          <small id="formStatus" style="color:#6f6a63;line-height:1.5;"></small>
-        </form>
 
-        <div style="margin-top:38px;color:#77716a;font-size:.68rem;line-height:1.8;letter-spacing:.08em;text-transform:uppercase;">
-          100 Placeholder Avenue · New York, NY 10001<br>
-          +1 (000) 000-0000 · hello@smilestudio.example
+          <div class="booking-form-wrap">
+            <h3>Request an appointment</h3>
+            <p>
+              Dummy contact details are used here for deployment setup.
+              Replace them with your real business information.
+            </p>
+
+            <form id="booking-form" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    placeholder="(555) 000-0000"
+                    required
+                  />
+                </div>
+
+                <div class="field">
+                  <label for="service">Service Needed</label>
+                  <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option>Emergency Plumbing</option>
+                    <option>Leak Detection</option>
+                    <option>Drain Cleaning</option>
+                    <option>Water Heater</option>
+                    <option>Pipe Installation</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="address">Address</label>
+                  <input
+                    id="address"
+                    name="address"
+                    type="text"
+                    autocomplete="street-address"
+                    placeholder="Service address"
+                    required
+                  />
+                </div>
+
+                <div class="field full">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Briefly describe the problem..."
+                  ></textarea>
+                </div>
+
+                <div class="field full">
+                  <button class="btn btn-primary form-submit" type="submit">
+                    Request Service
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+            </form>
+
+            <div class="booking-contact">
+              <span>Or call our 24/7 emergency line</span>
+              <a href="tel:+15550194820">(555) 019-4820</a>
+              <span>123 Placeholder Avenue · Placeholder City, ST 00000</span>
+              <span>hello@flowstateplumbing.example</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="container">
       <div class="footer-top">
-        <div class="footer-brand">SMILE<br>STUDIO</div>
-        <div class="footer-links">
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Privacy</a>
-          <a href="#contact">Contact</a>
+        <div class="footer-brand">
+          <a class="brand" href="#top">
+            <span class="brand-mark" aria-hidden="true"></span>
+            FLOWSTATE PLUMBING
+          </a>
+
+          <p>
+            Fast, reliable plumbing service built around clear communication,
+            professional workmanship, and keeping your home flowing.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="#services">Leak Detection</a></li>
+            <li><a href="#services">Drain Cleaning</a></li>
+            <li><a href="#services">Water Heater</a></li>
+            <li><a href="#services">Pipe Installation</a></li>
+            <li><a href="#contact">Emergency Plumbing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links">
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="#work">Our Work</a></li>
+            <li><a href="#area">Service Area</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Emergency</h3>
+          <span style="color: var(--steel); font-size: .75rem;">
+            Available 24 hours a day
+          </span>
+          <a class="footer-phone" href="tel:+15550194820">
+            (555) 019-4820
+          </a>
+
+          <div class="socials" style="margin-top: 20px;">
+            <a class="social" href="#" aria-label="Instagram">IG</a>
+            <a class="social" href="#" aria-label="Facebook">FB</a>
+            <a class="social" href="#" aria-label="LinkedIn">IN</a>
+          </div>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <span>© 2026 SMILE STUDIO. All rights reserved.</span>
-        <span>Cosmetic dentistry / By appointment only</span>
+        <span>
+          © <span id="year"></span> FLOWSTATE PLUMBING. All rights reserved.
+        </span>
+
+        <span>
+          Licensed &amp; Insured · License #PL-000000
+        </span>
+
+        <span>
+          Privacy · Terms
+        </span>
       </div>
     </div>
   </footer>
 
+  <a class="mobile-call" href="tel:+15550194820" aria-label="Call FLOWSTATE PLUMBING now">
+    <span aria-hidden="true">☎</span>
+    Call Now · 24/7 Emergency
+  </a>
+
   <script>
-    // ---------------- NAV SCROLL STATE ----------------
-    const nav = document.getElementById('nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    /**
+     * FLOWSTATE PLUMBING
+     * Interaction layer:
+     * - Header state
+     * - Intersection Observer reveals
+     * - Scroll-driven SVG flow-line
+     * - Booking form feedback
+     * - Dynamic copyright year
+     */
 
-    // ---------------- HERO CURSOR SPOTLIGHT ----------------
-    const hero = document.getElementById('hero');
-    if (window.matchMedia('(pointer:fine)').matches) {
-      hero.addEventListener('pointermove', (event) => {
-        const r = hero.getBoundingClientRect();
-        const x = ((event.clientX - r.left) / r.width) * 100;
-        const y = ((event.clientY - r.top) / r.height) * 100;
-        hero.style.setProperty('--mx', `${x}%`);
-        hero.style.setProperty('--my', `${y}%`);
-      });
-    }
+    (() => {
+      "use strict";
 
-    // ---------------- SCROLL REVEALS: Intersection Observer ----------------
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const revealItems = document.querySelectorAll('.reveal');
-    if (!reduceMotion && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-      revealItems.forEach(el => observer.observe(el));
-    } else {
-      revealItems.forEach(el => el.classList.add('is-visible'));
-    }
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
 
-    // ---------------- BEFORE / AFTER SLIDER ----------------
-    const compare = document.getElementById('compare');
-    const range = document.getElementById('compareRange');
-    const updateCompare = () => compare.style.setProperty('--split', `${range.value}%`);
-    range.addEventListener('input', updateCompare);
-    updateCompare();
+      const header = document.getElementById("site-header");
+      const flowPath = document.getElementById("flow-progress");
+      const servicesSection = document.getElementById("services");
+      const processSection = document.getElementById("process");
+      const bookingForm = document.getElementById("booking-form");
+      const formStatus = document.getElementById("form-status");
+      const yearElement = document.getElementById("year");
 
-    // ---------------- MOBILE NAV ----------------
-    const menu = document.querySelector('.menu');
-    const navLinks = document.querySelector('.nav-links');
-    const mobileStyle = document.createElement('style');
-    mobileStyle.textContent = `
-      @media (max-width:900px) {
-        .nav-links.mobile-open {
-          display:flex; position:absolute; top:65px; left:16px; right:16px;
-          flex-direction:column; align-items:stretch; gap:0;
-          background:rgba(11,11,13,.96); border:1px solid rgba(247,243,236,.12);
-          padding:8px; backdrop-filter:blur(18px);
+      const updateHeader = () => {
+        header.classList.toggle("scrolled", window.scrollY > 24);
+      };
+
+      const initializeFlowPath = () => {
+        if (!flowPath) {
+          return;
         }
-        .nav-links.mobile-open a { padding:15px 12px; }
+
+        const length = flowPath.getTotalLength();
+
+        flowPath.style.strokeDasharray = length;
+        flowPath.style.strokeDashoffset = length;
+
+        if (reducedMotion) {
+          flowPath.style.strokeDashoffset = 0;
+        }
+      };
+
+      const updateFlowPath = () => {
+        if (!flowPath || reducedMotion) {
+          return;
+        }
+
+        const start = servicesSection.offsetTop;
+        const end = processSection.offsetTop + processSection.offsetHeight;
+        const viewportOffset = window.scrollY + window.innerHeight * 0.55;
+
+        const progress = Math.min(
+          1,
+          Math.max(0, (viewportOffset - start) / (end - start))
+        );
+
+        const length = flowPath.getTotalLength();
+        flowPath.style.strokeDashoffset = length * (1 - progress);
+      };
+
+      const createRevealObserver = () => {
+        const elements = document.querySelectorAll(
+          ".reveal, .service-card, .process-step, .testimonial"
+        );
+
+        if (reducedMotion) {
+          elements.forEach((element) => {
+            element.classList.add("is-visible");
+          });
+
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries, observerInstance) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) {
+                return;
+              }
+
+              entry.target.classList.add("is-visible");
+              observerInstance.unobserve(entry.target);
+            });
+          },
+          {
+            root: null,
+            threshold: 0.14,
+            rootMargin: "0px 0px -50px 0px"
+          }
+        );
+
+        elements.forEach((element, index) => {
+          const delay = element.classList.contains("service-card")
+            ? (index % 4) * 80
+            : element.classList.contains("process-step")
+              ? (index % 4) * 90
+              : element.classList.contains("testimonial")
+                ? (index % 3) * 90
+                : 0;
+
+          if (delay > 0) {
+            element.style.transitionDelay = `${delay}ms`;
+          }
+
+          observer.observe(element);
+        });
+      };
+
+      const initializeForm = () => {
+        if (!bookingForm || !formStatus) {
+          return;
+        }
+
+        bookingForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          if (!bookingForm.checkValidity()) {
+            formStatus.textContent =
+              "Please complete the required fields before submitting.";
+            bookingForm.reportValidity();
+            return;
+          }
+
+          const submitButton = bookingForm.querySelector(
+            'button[type="submit"]'
+          );
+
+          submitButton.disabled = true;
+          submitButton.textContent = "Request Received";
+
+          formStatus.textContent =
+            "Thanks — this demo form is ready to connect to your booking system.";
+
+          bookingForm.reset();
+
+          window.setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.innerHTML =
+              'Request Service <span class="btn-arrow" aria-hidden="true">→</span>';
+          }, 2500);
+        });
+      };
+
+      const initializeYear = () => {
+        if (yearElement) {
+          yearElement.textContent = new Date().getFullYear();
+        }
+      };
+
+      let ticking = false;
+
+      const handleScroll = () => {
+        if (ticking) {
+          return;
+        }
+
+        window.requestAnimationFrame(() => {
+          updateHeader();
+          updateFlowPath();
+          ticking = false;
+        });
+
+        ticking = true;
+      };
+
+      const initialize = () => {
+        initializeFlowPath();
+        createRevealObserver();
+        initializeForm();
+        initializeYear();
+        updateHeader();
+        updateFlowPath();
+
+        window.addEventListener("scroll", handleScroll, {
+          passive: true
+        });
+
+        window.addEventListener("resize", () => {
+          initializeFlowPath();
+          updateFlowPath();
+        });
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initialize);
+      } else {
+        initialize();
       }
-    `;
-    document.head.appendChild(mobileStyle);
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('mobile-open'));
-    });
+    })();
   </script>
 </body>
 </html>
